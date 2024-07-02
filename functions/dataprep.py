@@ -17,12 +17,12 @@ def define_x_y(df, x_col, y_col):
 
     return X, y
 
-def tokenize_smiles(X, y, tokenizer_path, max_length, csv_file_name):
+def tokenize_smiles(X, y, pretrained_model, max_length, csv_file_name):
     """
     Tokenize SMILES strings and save them to a JSON file.
     """
     # Load the tokenizer using AutoTokenizer
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
+    tokenizer = AutoTokenizer.from_pretrained(pretrained_model)
     input_ids = []
     attention_masks = []
     
